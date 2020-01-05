@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bw.mapper.BooksMapper">
+	<insert id="add" parameterType="com.bw.bean.Book">
+		INSERT INTO book
+		(bid,bname,btype,bphone,bauthor,blike)
+		VALUES(#{bid},#{bname},#{btype},#{bphone},#{bauthor},#{blike})
+	</insert>
+
+	<insert id="adde">
+		INSERT INTO erro (bid,erroc) VALUES(#{bid},#{erroc})
+	</insert>
+
+	<select id="selAll" parameterType="map" resultType="com.bw.bean.Book">
+		SELECT * FROM
+		book
+	</select>
+
+	<select id="selT" resultType="map">
+		SELECT DISTINCT btype FROM book
+	</select>
+</mapper>
